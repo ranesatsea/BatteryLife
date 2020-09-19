@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://LevelMain/LevelMain.cs" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="LevelMain" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="LevelDoor1" type="Area2D" parent="."]
+position = Vector2( 24, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor1"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor1/CollisionShape2D"]
+position = Vector2( 0, 1.90735e-06 )
+scale = Vector2( 0.325745, 0.27653 )
+frames = SubResource( 2 )
+
+[node name="LevelDoor2" type="Area2D" parent="."]
+position = Vector2( 272, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor2"]
+position = Vector2( 1.52588e-05, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor2/CollisionShape2D"]
+position = Vector2( 0, 3.8147e-06 )
+scale = Vector2( 0.325745, 0.27653 )
+frames = SubResource( 2 )
+
+[node name="LevelDoor3" type="Area2D" parent="."]
+position = Vector2( 24, 88 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor3"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor3/CollisionShape2D"]
+scale = Vector2( 0.325745, 0.27653 )
+frames = SubResource( 2 )
+
+[node name="LevelDoor4" type="Area2D" parent="."]
+position = Vector2( 272, 88 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor4"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor4/CollisionShape2D"]
+position = Vector2( 0, -3.05176e-05 )
+scale = Vector2( 0.325745, 0.27653 )
+frames = SubResource( 2 )
+
+[node name="LevelDoor5" type="Area2D" parent="."]
+position = Vector2( 24, 144 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor5"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor5/CollisionShape2D"]
+position = Vector2( 0, 1.52588e-05 )
+scale = Vector2( 0.325745, 0.27653 )
+frames = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 120, 48 )
+[connection signal="body_entered" from="LevelDoor1" to="." method="_on_LevelDoor1_body_entered"]

@@ -1,0 +1,6 @@
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\obj\Debug\Battery Life - C#.csprojAssemblyReference.cache
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\obj\Debug\Battery Life - C#.csproj.CoreCompileInputs.cache
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\bin\Debug\Battery Life - C#.dll
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\bin\Debug\Battery Life - C#.pdb
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\obj\Debug\Battery Life - C#.dll
+C:\Users\Ranes\Documents\Video Game Projects\Full Games\Battery Life - C#\.mono\temp\obj\Debug\Battery Life - C#.pdb
