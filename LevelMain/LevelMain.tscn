@@ -36,7 +36,7 @@ position = Vector2( 1.52588e-05, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelDoor2/CollisionShape2D"]
-position = Vector2( 0, 3.8147e-06 )
+position = Vector2( 0, 7.62939e-06 )
 scale = Vector2( 0.325745, 0.27653 )
 frames = SubResource( 2 )
 
@@ -75,3 +75,4 @@ frames = SubResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 48 )
 [connection signal="body_entered" from="LevelDoor1" to="." method="_on_LevelDoor1_body_entered"]
+[connection signal="body_entered" from="LevelDoor2" to="." method="_on_LevelDoor2_body_entered"]

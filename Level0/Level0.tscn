@@ -21,8 +21,7 @@ position = Vector2( 32.7384, 0.607491 )
 z_index = 1
 
 [node name="VerticalSpikeTrigger" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 315.741, 52.8829 )
+position = Vector2( 161.415, 73.8592 )
 
 [node name="ChangeScene" parent="." instance=ExtResource( 6 )]
 visible = false

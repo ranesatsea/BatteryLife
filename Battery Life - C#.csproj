@@ -65,6 +65,7 @@
     <Compile Include="Level0\Level0.cs" />
     <Compile Include="Level1\Level1.cs" />
     <Compile Include="GlobalNode\GlobalVar.cs" />
+    <Compile Include="Level1\WireMappingLevel1.cs" />
     <Compile Include="LevelMain\LevelMain.cs" />
     <Compile Include="MainExitDoor\MainExitDoor.cs" />
     <Compile Include="Player\Player.cs" />
