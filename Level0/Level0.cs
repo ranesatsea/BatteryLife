@@ -15,7 +15,7 @@ public class Level0 : Node2D
         //float Amount =3;
         //GlobalVar b = (GlobalVar)GetNode("/root/GlobalNode"); 
        // GD.Print(b.buttonCheck);
-        KinematicBody2D movingSpike = (KinematicBody2D)GetNode("spike");
+        //KinematicBody2D movingSpike = (KinematicBody2D)GetNode("spike");
         // if(buttonOneCheck.buttonCheck == 1 && leftRight == 1)
         // {
         //     movingSpike.Position += new Vector2(Amount,0);

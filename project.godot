@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Battery Life - C#"
-run/main_scene="res://LevelMain/LevelMain.tscn"
+run/main_scene="res://Level1/Level1.tscn"
 config/icon="res://icon.png"
 
 [display]

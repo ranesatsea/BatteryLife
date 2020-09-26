@@ -70,10 +70,8 @@
     <Compile Include="MainExitDoor\MainExitDoor.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpikeTrigger\VerticalSpikeTrigger\LeftTrigger.cs" />
-    <Compile Include="SpikeTrigger\VerticalSpikeTrigger\VerticalSpikeTrigger.cs" />
-    <Compile Include="spike\spike.cs" />
     <Compile Include="testWorld\ChangeScenes.cs" />
+    <Compile Include="Trigger\Trigger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
