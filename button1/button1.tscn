@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://asset/button1.png" type="Texture" id=1]
 [ext_resource path="res://button1/button1.cs" type="Script" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -12,7 +12,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 28, 36 )
+extents = Vector2( 6.57433, 6.24325 )
 
 [node name="button1" type="Area2D"]
 script = ExtResource( 2 )
@@ -21,7 +21,7 @@ script = ExtResource( 2 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 0 )
+position = Vector2( 0.00675297, 0.0594635 )
 shape = SubResource( 2 )
 
 [node name="DoorTime" type="Timer" parent="."]

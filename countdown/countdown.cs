@@ -22,7 +22,7 @@ public class countdown : Node2D
         }
     message1.Show();// callmessages1 and dispalys it
     }
-    public void _on_ms_timeout()
+    public void on_ms_timeout()
     {
         ms-=1;
     }

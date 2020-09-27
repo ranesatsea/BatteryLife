@@ -22,4 +22,4 @@ __meta__ = {
 [node name="ms" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
-[connection signal="timeout" from="ms" to="." method="_on_ms_timeout"]
+[connection signal="timeout" from="ms" to="." method="on_ms_timeout"]

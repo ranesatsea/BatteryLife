@@ -10,16 +10,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 6.58728
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
 
-[node name="spike" type="KinematicBody2D"]
-position = Vector2( 8.00146, 12.5596 )
+[node name="Spike" type="KinematicBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 4.41422, -2 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.2956, -2.31462 )
 shape = SubResource( 2 )
