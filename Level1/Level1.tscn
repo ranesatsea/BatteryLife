@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/Level1.cs" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,42 +6,7 @@
 [ext_resource path="res://button1/button1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/WireMappingLevel1.cs" type="Script" id=5]
 [ext_resource path="res://Trigger/Trigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Spike/Spike.tscn" type="PackedScene" id=7]
 [ext_resource path="res://countdown/countdown.tscn" type="PackedScene" id=8]
-
-[sub_resource type="CSharpScript" id=1]
-script/source = "using Godot;
-using System;
-
-public class Trigger : Area2D
-{
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = \"text\";
-    public static int buttonOneCheck=0;
-    public override void _Ready()
-    {
-        
-    }
-
-    public void _on_Trigger_body_entered(KinematicBody2D body)
-    {
-        GD.Print(\"Enter trigger\");
-        buttonOneCheck= 1;
-    }
-
-    public void _on_Trigger_body_exited(KinematicBody2D body)
-    {
-        buttonOneCheck= 0;
-        GD.Print(\"Exit trigger\");
-
-
-    }
-}
-"
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.21057, 6.6042 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -61,37 +26,30 @@ script = ExtResource( 5 )
 position = Vector2( 7.55099, 22.653 )
 polygon = PoolVector2Array( -18.5415, -6.44669, -6.74307, -100.362, 18.7415, -95.1709, 11.1905, -15.8854 )
 
-[node name="Spike" parent="." instance=ExtResource( 7 )]
-
 [node name="button1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 106.506, 82.7056 )
 
-[node name="Trigger" parent="." instance=ExtResource( 6 )]
-position = Vector2( 106.506, 82.7056 )
-script = SubResource( 1 )
-
-[node name="CollisionShape2D" parent="Trigger" index="0"]
-position = Vector2( 22.353, 0 )
-shape = SubResource( 2 )
-
-[node name="Spike" parent="Trigger" index="1"]
-position = Vector2( -5.60378, 28.0045 )
-
-[node name="Left" parent="Trigger" index="2"]
-position = Vector2( -73.8016, 28.0045 )
-
-[node name="Right" parent="Trigger" index="3"]
-position = Vector2( 57.9084, 20.0045 )
-
-[node name="CollisionShape2D" parent="Trigger/Right" index="0"]
-position = Vector2( 0, 8 )
-
 [node name="Countdown" parent="." instance=ExtResource( 8 )]
 position = Vector2( 137.5, 10.6994 )
-[connection signal="body_entered" from="WireMappingLevel1" to="." method="on_WireMappingLevel1_body_entered"]
-[connection signal="body_entered" from="Trigger" to="." method="_on_Trigger_body_entered"]
-[connection signal="body_exited" from="Trigger" to="." method="_on_Trigger_body_exited"]
 
-[editable path="Trigger"]
+[node name="Trigger" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="Trigger" index="0"]
+position = Vector2( 137.404, 82.7651 )
+
+[node name="Left" parent="Trigger" index="1"]
+position = Vector2( 63.3505, 116.583 )
+
+[node name="Right" parent="Trigger" index="2"]
+position = Vector2( 196.143, 116.583 )
+
+[node name="CollisionShape2D" parent="Trigger/Right" index="0"]
+position = Vector2( 0, -3.8147e-06 )
+
+[node name="Spike" parent="Trigger" index="3"]
+position = Vector2( 152.793, 116.583 )
+[connection signal="body_entered" from="WireMappingLevel1" to="." method="on_WireMappingLevel1_body_entered"]
 
 [editable path="Countdown"]
+
+[editable path="Trigger"]
