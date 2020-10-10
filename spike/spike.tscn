@@ -10,8 +10,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 6.40917
 
 [node name="Spike" type="KinematicBody2D"]
 

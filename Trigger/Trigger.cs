@@ -3,23 +3,31 @@ using System;
 
 public class Trigger : Area2D
 {
-    public static int buttonOneCheck=0;
-    public static int leftRight=0;
-    public int speed=100;
+    public static int buttonOneCheck;
+    public static int leftRight;
+    public int speed=50;
     
+    public void Ready()
+    {
+        buttonOneCheck=0;
+    }
     /*
     When Player steps on Trigger Node to see if spikes will be moving
     */
     public void _on_Trigger_body_entered(KinematicBody2D body)//Player steps on nodes, the spike willmove
     {
-        GD.Print("Enter trigger");
-        buttonOneCheck= 1;
+        if(body.GetName() == "Player")//keeps this to intially stop spike from moving
+        {
+            GD.Print("Enter trigger");
+            buttonOneCheck= 1;   
+        }
     }
 
     public void _on_Trigger_body_exited(KinematicBody2D body)//when playe steps out, spike will stop
     {
-        buttonOneCheck= 0;
-        GD.Print("Exit trigger");
+
+            buttonOneCheck= 0;
+            GD.Print("Exit trigger");
     }
     
     /*
@@ -43,9 +51,10 @@ public class Trigger : Area2D
     }
     /*
     Signal
+    When Spike touches Left Node or Right Node
     
     */
-    public void on_Right_body_entered(KinematicBody2D body)
+    public void on_Right_body_entered(KinematicBody2D body)//Spike touches Right node it will go left
     {
         if(body.GetName() == "Spike")
         {
@@ -53,7 +62,7 @@ public class Trigger : Area2D
             GD.Print("SPike will now move RIght");
         }
     }
-    public void on_Left_body_entered(KinematicBody2D body2D)
+    public void on_Left_body_entered(KinematicBody2D body2D)//Spsike touches Left node it will go Right
     {
         if(body2D.GetName()== "Spike")
         {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level1/Level1.cs" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,16 +6,28 @@
 [ext_resource path="res://button1/button1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/WireMappingLevel1.cs" type="Script" id=5]
 [ext_resource path="res://Trigger/Trigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://countdown/countdown.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 194.486, 43.4866 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 25.9568, 58.8002 )
+position = Vector2( 31.8846, 80 )
 
 [node name="MainExitDoor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 301.787, 50.8542 )
+position = Vector2( 240, 88 )
 
 [node name="WireMappingLevel1" type="Area2D" parent="."]
 visible = false
@@ -27,7 +39,7 @@ position = Vector2( 7.55099, 22.653 )
 polygon = PoolVector2Array( -18.5415, -6.44669, -6.74307, -100.362, 18.7415, -95.1709, 11.1905, -15.8854 )
 
 [node name="button1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 106.506, 82.7056 )
+position = Vector2( 118.902, 72 )
 
 [node name="Countdown" parent="." instance=ExtResource( 8 )]
 position = Vector2( 137.5, 10.6994 )
@@ -35,19 +47,32 @@ position = Vector2( 137.5, 10.6994 )
 [node name="Trigger" parent="." instance=ExtResource( 6 )]
 
 [node name="CollisionShape2D" parent="Trigger" index="0"]
-position = Vector2( 137.404, 82.7651 )
+position = Vector2( 158.043, 72.0595 )
 
 [node name="Left" parent="Trigger" index="1"]
-position = Vector2( 63.3505, 116.583 )
+position = Vector2( 78.0432, 72 )
 
 [node name="Right" parent="Trigger" index="2"]
-position = Vector2( 196.143, 116.583 )
+position = Vector2( 238.043, 72.6729 )
 
 [node name="CollisionShape2D" parent="Trigger/Right" index="0"]
-position = Vector2( 0, -3.8147e-06 )
+position = Vector2( 0, -2.72848e-12 )
 
 [node name="Spike" parent="Trigger" index="3"]
-position = Vector2( 152.793, 116.583 )
+position = Vector2( 206.043, 72.6729 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 158.043, 141.653 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 17.9568, 2.34712 )
+scale = Vector2( 5.96875, 1.28125 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 14.4213, 4.69026 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="WireMappingLevel1" to="." method="on_WireMappingLevel1_body_entered"]
 
 [editable path="Countdown"]
